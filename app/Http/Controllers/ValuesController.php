@@ -30,7 +30,6 @@ class ValuesController extends Controller
          $values=[];
 
         if ($keys) {
-            return $keys;
             foreach ($keys as $key) {
                 $values[] = $val= Redis::get($key);
                 Redis::set($key, $val,'EX',300);
